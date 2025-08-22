@@ -321,6 +321,11 @@
 		</Reference>
 	</ItemGroup>
 	<ItemGroup Label="Package References">
+		<Reference Include="Terrasoft.Configuration">
+			<HintPath>$(RelativePkgFolderPath)/../bin/Terrasoft.Configuration.dll</HintPath>
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
 		<Reference Include="CrtBaseConsts">
 			<HintPath>$(RelativePkgFolderPath)/CrtBaseConsts/$(StandalonePackageAssemblyPath)/CrtBaseConsts.dll</HintPath>
 			<SpecificVersion>False</SpecificVersion>
@@ -552,7 +557,12 @@
 			<Private>False</Private>
 		</Reference>
 	</ItemGroup>
-	<ItemGroup Label="Standalone package external assembly references" />
+	<ItemGroup Label="Standalone package external assembly references">
+		<Reference Include="$(RelativePkgFolderPath)/../Lib/System.Web.Services.CrtProcessDesigner.dll">
+			<SpecificVersion>False</SpecificVersion>
+			<Private>False</Private>
+		</Reference>
+	</ItemGroup>
 	<ItemGroup Label="Entity Files" />
 	<ItemGroup Label="3rd Party References"></ItemGroup>
 	<Target Name="Paths" BeforeTargets="BeforeCompile">

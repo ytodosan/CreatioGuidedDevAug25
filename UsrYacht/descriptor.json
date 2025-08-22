@@ -5,6 +5,12 @@
     "Type": 1,
     "Maintainer": "Customer",
     "ProjectPath": "Files/UsrYacht.csproj",
-    "DependsOn": []
+    "DependsOn": [
+      {
+        "UId": "29996b0e-2b19-27a8-dab4-67fbc00db573",
+        "PackageVersion": "7.8.0",
+        "Name": "CrtProcessDesigner"
+      }
+    ]
   }
 }
