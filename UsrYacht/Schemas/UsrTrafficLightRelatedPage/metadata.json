@@ -1,0 +1,23 @@
+﻿{
+  "MetaData": {
+    "Schema": {
+      "ManagerName": "AddonSchemaManager",
+      "UId": "732cc9ad-11ee-4170-8331-136ee7b37f9a",
+      "A2": "UsrTrafficLightRelatedPage",
+      "A5": "4b72368a-0e03-4ce7-b013-a7f94b8b1864",
+      "B1": [],
+      "B2": [],
+      "B3": [],
+      "B6": "f4cca45c-cf66-48a0-b74e-299e3ce05010",
+      "B8": "8.3.0.3074",
+      "AD1": "2a93cf17-79eb-4307-ad26-8332b3ad0db5",
+      "AD2": "EntitySchemaManager",
+      "AD3": "RelatedPage",
+      "AD5": "3a2d6f51-1bfc-4c17-aacb-b53de4866b7c",
+      "AD4": {
+  "Pages": [],
+  "TypeColumnUId": null
+}
+    }
+  }
+}

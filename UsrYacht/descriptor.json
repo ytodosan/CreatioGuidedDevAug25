@@ -3,13 +3,15 @@
     "UId": "f4cca45c-cf66-48a0-b74e-299e3ce05010",
     "Name": "UsrYacht",
     "Type": 1,
+    "ModifiedOnUtc": "\/Date(1756395310000)\/",
     "Maintainer": "Customer",
     "ProjectPath": "Files/UsrYacht.csproj",
     "DependsOn": [
       {
-        "UId": "29996b0e-2b19-27a8-dab4-67fbc00db573",
+        "UId": "012e2e14-082b-ac2b-da5a-2fc87bad41d4",
         "PackageVersion": "7.8.0",
-        "Name": "CrtProcessDesigner"
+        "Name": "CrtCore",
+        "Type": 1
       }
     ]
   }

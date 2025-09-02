@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "732cc9ad-11ee-4170-8331-136ee7b37f9a",
+    "Name": "UsrTrafficLightRelatedPage",
+    "ModifiedOnUtc": "\/Date(1756826420000)\/",
+    "ManagerName": "AddonSchemaManager",
+    "Caption": "Traffic Light (Page settings)",
+    "DependsOn": []
+  }
+}
