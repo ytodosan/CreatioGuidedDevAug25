@@ -41,6 +41,20 @@
           "Value": ""
         }
       ]
+    },
+    {
+      "Row": [
+        {
+          "SchemaColumnUId": "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
+          "ColumnName": "Id",
+          "Value": "bb14440f-47a7-4c14-8a98-40a9fc762176"
+        },
+        {
+          "SchemaColumnUId": "bf46f84b-46c6-7aa3-daf7-54b9e35ca1d8",
+          "ColumnName": "UsrName",
+          "Value": ""
+        }
+      ]
     }
   ]
 }

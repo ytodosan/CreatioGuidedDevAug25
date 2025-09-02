@@ -62,6 +62,27 @@
           "Value": "\/Date(1756397273236+0300)\/"
         }
       ]
+    },
+    {
+      "Row": [
+        {
+          "SchemaColumnUId": "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
+          "Value": "bb14440f-47a7-4c14-8a98-40a9fc762176"
+        },
+        {
+          "SchemaColumnUId": "308b2038-60ba-8c5c-1f72-795ccb05d554",
+          "Value": "null",
+          "DisplayValue": ""
+        },
+        {
+          "SchemaColumnUId": "75eec0c4-a36c-d019-573a-ae465ef3e277",
+          "Value": ""
+        },
+        {
+          "SchemaColumnUId": "e80190a5-03b2-4095-90f7-a193a960adee",
+          "Value": "\/Date(1756831409153+0300)\/"
+        }
+      ]
     }
   ]
 }
