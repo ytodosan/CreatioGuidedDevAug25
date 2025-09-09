@@ -2,13 +2,12 @@
   "Descriptor": {
     "UId": "0bae726a-d0bb-4ddc-8582-69b28d34cbc1",
     "Name": "UsrStatus",
-    "ModifiedOnUtc": "\/Date(1756924725000)\/",
+    "ModifiedOnUtc": "\/Date(1757415804000)\/",
     "Parent": {
       "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
       "Name": "BaseLookup"
     },
     "ManagerName": "EntitySchemaManager",
-    "Caption": "Yacht Status",
-    "DependsOn": []
+    "Caption": "Yacht Status"
   }
 }
