@@ -1,0 +1,42 @@
+﻿{
+  "Descriptor": {
+    "UId": "47eff74b-43a5-e6a2-508f-35cc5681dd4e",
+    "Name": "SysUserInRole_SupervisorInFinance",
+    "ModifiedOnUtc": "\/Date(1757699427000)\/",
+    "InstallType": 0,
+    "Schema": {
+      "UId": "4b27f502-c296-47cf-af5d-3197d54e0d2a",
+      "Name": "SysUserInRole"
+    },
+    "Columns": [
+      {
+        "ColumnUId": "c540ad32-33ed-4ad0-abb7-cc1575b9f6f2",
+        "IsForceUpdate": false,
+        "IsKey": false,
+        "ColumnName": "SysUser",
+        "DataTypeValueUId": "b295071f-7ea9-4e62-8d1a-919bf3732ff2"
+      },
+      {
+        "ColumnUId": "ceffac9c-08c8-4792-a3fc-2931b23bc538",
+        "IsForceUpdate": false,
+        "IsKey": false,
+        "ColumnName": "SysRole",
+        "DataTypeValueUId": "b295071f-7ea9-4e62-8d1a-919bf3732ff2"
+      },
+      {
+        "ColumnUId": "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
+        "IsForceUpdate": false,
+        "IsKey": true,
+        "ColumnName": "Id",
+        "DataTypeValueUId": "23018567-a13c-4320-8687-fd6f9e3699bd"
+      },
+      {
+        "ColumnUId": "e80190a5-03b2-4095-90f7-a193a960adee",
+        "IsForceUpdate": false,
+        "IsKey": false,
+        "ColumnName": "CreatedOn",
+        "DataTypeValueUId": "d21e9ef4-c064-4012-b286-fa1a8171da44"
+      }
+    ]
+  }
+}
