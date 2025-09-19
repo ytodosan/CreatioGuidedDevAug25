@@ -3,6 +3,7 @@
 	<Group Type="String">
 		<Items>
 			<Item Name="Caption" Value="Yacht form page" />
+			<Item Name="LocalizableStrings.SaveButton_caption.Value" Value="שמור" />
 		</Items>
 	</Group>
 </Resources>

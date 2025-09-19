@@ -3,6 +3,22 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 		viewConfigDiff: /**SCHEMA_VIEW_CONFIG_DIFF*/[
 			{
 				"operation": "merge",
+				"name": "SaveButton",
+				"values": {
+					"clicked": {
+						"request": "crt.SaveRecordRequest",
+						"params": {
+							"preventCardClose": false
+						}
+					},
+					"caption": "#ResourceString(SaveButton_caption)#",
+					"size": "large",
+					"iconPosition": "only-text",
+					"clickMode": "default"
+				}
+			},
+			{
+				"operation": "merge",
 				"name": "MainHeaderBottom",
 				"values": {
 					"color": "transparent",
@@ -499,7 +515,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 			},
 			{
 				"operation": "insert",
-				"name": "Input_l9qs7go",
+				"name": "CaptainEmail",
 				"values": {
 					"layoutConfig": {
 						"column": 2,
@@ -507,11 +523,16 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 						"row": 4,
 						"rowSpan": 1
 					},
-					"type": "crt.Input",
-					"label": "$Resources.Strings.PDS_UsrComment_p3ay6y5",
+					"type": "crt.EmailInput",
+					"label": "#ResourceString(CaptainEmail_label)#",
+					"control": "$PDS_UsrCaptainEmail_xd0gnrr",
 					"labelPosition": "auto",
-					"control": "$PDS_UsrComment_p3ay6y5",
-					"multiline": false
+					"placeholder": "",
+					"tooltip": "",
+					"needHandleSave": false,
+					"caption": "#ResourceString(CaptainEmail_caption)#",
+					"visible": true,
+					"readonly": true
 				},
 				"parentName": "GeneralInfoTabContainer",
 				"propertyName": "items",
@@ -539,6 +560,26 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 				"parentName": "GeneralInfoTabContainer",
 				"propertyName": "items",
 				"index": 8
+			},
+			{
+				"operation": "insert",
+				"name": "Input_l9qs7go",
+				"values": {
+					"layoutConfig": {
+						"column": 2,
+						"colSpan": 1,
+						"row": 5,
+						"rowSpan": 1
+					},
+					"type": "crt.Input",
+					"label": "$Resources.Strings.PDS_UsrComment_p3ay6y5",
+					"labelPosition": "auto",
+					"control": "$PDS_UsrComment_p3ay6y5",
+					"multiline": false
+				},
+				"parentName": "GeneralInfoTabContainer",
+				"propertyName": "items",
+				"index": 9
 			},
 			{
 				"operation": "insert",
@@ -590,6 +631,15 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 					"PDS_UsrPrice_r4pn2q5": {
 						"modelConfig": {
 							"path": "PDS.UsrPrice"
+						},
+						"validators": {
+							"MyMinValValidator": {
+								"type": "usr.YTValidator",
+								"params": {
+									"minValue": 50,
+									"message": "#ResourceString(PriceCannotBeLess)#"
+								}
+							}
 						}
 					},
 					"PDS_UsrDriveType_2o4r9lx": {
@@ -605,16 +655,43 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 					"PDS_UsrLength_ig74oia": {
 						"modelConfig": {
 							"path": "PDS.UsrLength"
+						},
+						"validators": {
+							"MyMinValValidator": {
+								"type": "usr.YTValidator",
+								"params": {
+									"minValue": 3,
+									"message": "#ResourceString(MinimumLength)#"
+								}
+							}
 						}
 					},
 					"PDS_UsrCrewCount_l34t8bb": {
 						"modelConfig": {
 							"path": "PDS.UsrCrewCount"
+						},
+						"validators": {
+							"MyMinValValidator": {
+								"type": "usr.YTValidator",
+								"params": {
+									"minValue": 1,
+									"message": "#ResourceString(MinimumCrew)#"
+								}
+							}
 						}
 					},
 					"PDS_UsrPassengersCount_isburu9": {
 						"modelConfig": {
 							"path": "PDS.UsrPassengersCount"
+						},
+						"validators": {
+							"MyMinValValidator": {
+								"type": "usr.YTValidator",
+								"params": {
+									"minValue": 2,
+									"message": "#ResourceString(MinimumPassengers)#"
+								}
+							}
 						}
 					},
 					"PDS_UsrCaptain_86u8mb8": {
@@ -651,6 +728,11 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 						"modelConfig": {
 							"path": "PDS.UsrTicketPrice"
 						}
+					},
+					"PDS_UsrCaptainEmail_xd0gnrr": {
+						"modelConfig": {
+							"path": "PDS.UsrCaptainEmail_xd0gnrr"
+						}
 					}
 				}
 			},
@@ -683,7 +765,13 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 					"PDS": {
 						"type": "crt.EntityDataSource",
 						"config": {
-							"entitySchemaName": "UsrYacht"
+							"entitySchemaName": "UsrYacht",
+							"attributes": {
+								"UsrCaptainEmail_xd0gnrr": {
+									"path": "UsrCaptain.Email",
+									"type": "ForwardReference"
+								}
+							}
 						},
 						"scope": "page"
 					}
@@ -706,6 +794,38 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 			}
 		]/**SCHEMA_HANDLERS*/,
 		converters: /**SCHEMA_CONVERTERS*/{}/**SCHEMA_CONVERTERS*/,
-		validators: /**SCHEMA_VALIDATORS*/{}/**SCHEMA_VALIDATORS*/
+		validators: /**SCHEMA_VALIDATORS*/{
+			/* The validator type must contain a vendor prefix.
+			Format the validator type in PascalCase. */
+			"usr.YTValidator": {
+				validator: function (config) {
+					return function (control) {
+						let value = control.value;
+						let minValue = config.minValue;
+						let valueIsCorrect = value >= minValue;
+						var result;
+						if (valueIsCorrect) {
+							result = null;
+						} else {
+							result = {
+								"usr.YTValidator": { 
+									message: config.message
+								}
+							};
+						}
+						return result;
+					};
+				},
+				params: [
+					{
+						name: "minValue"
+					},
+					{
+						name: "message"
+					}
+				],
+				async: false
+			}
+		}/**SCHEMA_VALIDATORS*/
 	};
 });
