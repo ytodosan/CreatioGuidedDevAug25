@@ -1,0 +1,104 @@
+﻿{
+  "MetaData": {
+    "Schema": {
+      "ManagerName": "AddonSchemaManager",
+      "UId": "8e130fec-3568-43f4-9bce-c2c73c2ab0eb",
+      "A2": "UsrYachtRentalFormPageBusinessRule",
+      "A5": "4b72368a-0e03-4ce7-b013-a7f94b8b1864",
+      "B1": [],
+      "B2": [],
+      "B3": [],
+      "B6": "f4cca45c-cf66-48a0-b74e-299e3ce05010",
+      "B8": "8.3.0.3074",
+      "AD1": "c62ab2d3-3843-4bc8-a782-ffc33ad9f905",
+      "AD2": "ClientUnitSchemaManager",
+      "AD3": "BusinessRule",
+      "AD5": "3a2d6f51-1bfc-4c17-aacb-b53de4866b7c",
+      "AD4": {
+        "JI0": "Terrasoft.Core.BusinessRules.BusinessRules",
+        "BRS1": [
+          {
+            "JI0": "Terrasoft.Core.BusinessRules.BusinessRule",
+            "UId": "63126c18-d623-5969-c71c-5083390306b1",
+            "BR1": [
+              {
+                "JI0": "Terrasoft.Core.BusinessRules.Models.BusinessRuleCase",
+                "UId": "d0742fea-06bf-7818-ffd6-cbfb04399e9e",
+                "BRC1": {
+                  "JI0": "Terrasoft.Core.BusinessRules.Models.Conditions.BusinessRuleGroupCondition",
+                  "UId": "20647558-be02-1643-6f54-8b7546bfdf56",
+                  "BGC1": 1,
+                  "BGC2": [
+                    {
+                      "JI0": "Terrasoft.Core.BusinessRules.Models.Conditions.BusinessRuleCondition",
+                      "UId": "d3f83f19-8b16-b4c9-0a42-426ff16a7b32",
+                      "BCO1": {
+                        "JI0": "Terrasoft.Core.BusinessRules.Models.Expressions.BusinessRuleSysValueExpression",
+                        "UId": "d738057b-e96d-a491-0392-21ccf6731cc3",
+                        "BRE1": "Date",
+                        "BRE2": "SysValue",
+                        "BSV1": "CurrentDate"
+                      },
+                      "BCO2": {
+                        "JI0": "Terrasoft.Core.BusinessRules.Models.Expressions.BusinessRuleAttributeExpression",
+                        "UId": "10621620-10f7-2001-197d-ee3ed4bc97fd",
+                        "BRE1": "Date",
+                        "BRE2": "AttributeValue",
+                        "BRX1": "UsrYachtRentalDS_UsrRentalStartDate_7in3sji"
+                      },
+                      "BCO3": 2
+                    },
+                    {
+                      "JI0": "Terrasoft.Core.BusinessRules.Models.Conditions.BusinessRuleCondition",
+                      "UId": "96505de9-a9eb-e4be-ae2d-a587252391bc",
+                      "BCO1": {
+                        "JI0": "Terrasoft.Core.BusinessRules.Models.Expressions.BusinessRuleSysValueExpression",
+                        "UId": "07bf0823-b096-cb6c-ab7d-639e8f7e8451",
+                        "BRE1": "Date",
+                        "BRE2": "SysValue",
+                        "BSV1": "CurrentDate"
+                      },
+                      "BCO2": {
+                        "JI0": "Terrasoft.Core.BusinessRules.Models.Expressions.BusinessRuleAttributeExpression",
+                        "UId": "e82636a0-612b-f9fc-fde4-3b8379a79cfe",
+                        "BRE1": "Date",
+                        "BRE2": "AttributeValue",
+                        "BRX1": "UsrYachtRentalDS_UsrRentalEndDate_ix4m1wq"
+                      },
+                      "BCO3": 2
+                    }
+                  ]
+                },
+                "BRC2": [
+                  {
+                    "JI0": "Terrasoft.Core.BusinessRules.Models.Actions.BusinessRuleActionShowElement",
+                    "UId": "4ca9b1e1-cbdb-911e-7019-ba2432508436",
+                    "BRA4": "TimerToDock"
+                  }
+                ]
+              }
+            ],
+            "BR2": [
+              {
+                "JI0": "Terrasoft.Core.BusinessRules.Models.Trigger",
+                "UId": "c137b95b-25c9-9eb1-1ba8-ba3a4f7e9199",
+                "BRT2": 2
+              },
+              {
+                "JI0": "Terrasoft.Core.BusinessRules.Models.Trigger",
+                "UId": "079e0419-576e-9dc6-a52a-9aed25259acf",
+                "BRT1": "UsrYachtRentalDS_UsrRentalStartDate_7in3sji"
+              },
+              {
+                "JI0": "Terrasoft.Core.BusinessRules.Models.Trigger",
+                "UId": "8e64ec79-aa43-d8c7-b0ef-8f692e84b7b1",
+                "BRT1": "UsrYachtRentalDS_UsrRentalEndDate_ix4m1wq"
+              }
+            ],
+            "BR3": "BusinessRule_090c76a"
+          }
+        ]
+      }
+    }
+  }
+}

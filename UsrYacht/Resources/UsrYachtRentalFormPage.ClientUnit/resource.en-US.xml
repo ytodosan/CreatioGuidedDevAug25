@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Yacht Rental Form page" />
+			<Item Name="LocalizableStrings.addRecord_3uy9ywk_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_66dqty6_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.Timer_tmpqbw8_label.Value" Value="Timer" />
+			<Item Name="LocalizableStrings.TimerToDock_caption.Value" Value="Timer" />
+			<Item Name="LocalizableStrings.TimerToDock_negativeTextValue.Value" Value="Docking overdue" />
+			<Item Name="LocalizableStrings.TimerToDock_positiveTextValue.Value" Value="Scheduled to dock in" />
+		</Items>
+	</Group>
+</Resources>

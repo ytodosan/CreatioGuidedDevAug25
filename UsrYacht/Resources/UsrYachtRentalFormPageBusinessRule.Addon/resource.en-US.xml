@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="AddonConfig.Rules.63126c18-d623-5969-c71c-5083390306b1.Caption" Value="Show elements: Timer" />
+			<Item Name="Caption" Value="Yacht Rental Form page (Business rules)" />
+		</Items>
+	</Group>
+</Resources>

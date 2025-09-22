@@ -9,15 +9,20 @@
 			<Item Name="LocalizableStrings.addRecord_bu962ya_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_g8j1u09_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_ka9lsnn_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.Button_q04jnn1_caption.Value" Value="Add rental" />
 			<Item Name="LocalizableStrings.CaptainEmail_caption.Value" Value="Email address" />
 			<Item Name="LocalizableStrings.CaptainEmail_label.Value" Value="Captain's email" />
 			<Item Name="LocalizableStrings.EmailInput_0gzdlti_label.Value" Value="Captain's email" />
+			<Item Name="LocalizableStrings.ExpansionPanel_brbtvvf_title.Value" Value="Expand" />
+			<Item Name="LocalizableStrings.Label_s53b4sw_caption.Value" Value="Rentals:" />
 			<Item Name="LocalizableStrings.MinimumCrew.Value" Value="There should be at least 1 crew member assigned to any vessel" />
 			<Item Name="LocalizableStrings.MinimumLength.Value" Value="A vessel should be at least 3m long" />
 			<Item Name="LocalizableStrings.MinimumPassengers.Value" Value="The very minimum is 2 passengers" />
+			<Item Name="LocalizableStrings.MultiSelectCategories_label.Value" Value="Categories" />
 			<Item Name="LocalizableStrings.PriceCannotBeLess.Value" Value="The very minimum price is 50 EUR" />
 			<Item Name="LocalizableStrings.PushMeButton_caption.Value" Value="Push me!" />
 			<Item Name="LocalizableStrings.SaveButton_caption.Value" Value="Save" />
+			<Item Name="LocalizableStrings.SearchFilter_eo2d57g_placeholder.Value" Value="Search" />
 			<Item Name="LocalizableStrings.TabMoreDataTabContainer_caption.Value" Value="More data" />
 		</Items>
 	</Group>
