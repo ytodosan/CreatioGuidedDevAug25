@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "2cdec2db-2e63-490f-aab5-a71de656c9dd",
+    "Name": "UsrAdd3Rentals",
+    "ModifiedOnUtc": "\/Date(1759160308000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Add 3 Rentals",
+    "DependsOn": []
+  }
+}

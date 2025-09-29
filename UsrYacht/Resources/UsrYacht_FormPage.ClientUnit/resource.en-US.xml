@@ -11,6 +11,7 @@
 			<Item Name="LocalizableStrings.addRecord_ka9lsnn_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.Button_c9zpgwb_caption.Value" Value="Actions" />
 			<Item Name="LocalizableStrings.Button_q04jnn1_caption.Value" Value="Add rental" />
+			<Item Name="LocalizableStrings.Button_ycz2ypk_caption.Value" Value="Add 3 rentals" />
 			<Item Name="LocalizableStrings.CallMaxPriceWebServiceMenuItem_caption.Value" Value="Call Max price web services" />
 			<Item Name="LocalizableStrings.CaptainEmail_caption.Value" Value="Email address" />
 			<Item Name="LocalizableStrings.CaptainEmail_label.Value" Value="Captain's email" />

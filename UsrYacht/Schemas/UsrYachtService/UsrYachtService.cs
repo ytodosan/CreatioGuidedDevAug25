@@ -13,23 +13,24 @@ namespace Terrasoft.Configuration
     {
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped,
-            RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-
-        public decimal GetMaxPriceByDriveTypeId(string driveTypeId)
+    RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public decimal GetAveragePriceByDriveTypeId(string driveTypeId)
         {
             if (string.IsNullOrEmpty(driveTypeId))
             {
                 return -1;
             }
             Select select = new Select(UserConnection)
-                .Column(Func.Max("UsrPrice"))
+                .Column(Func.Avg("UsrPrice"))
                 .From("UsrYacht")
                 .Where("UsrDriveTypeId").IsEqual(Column.Parameter(new Guid(driveTypeId)))
                 .And("UsrStatusId").IsEqual(Column.Parameter(new Guid("fe55431e-663e-4cfb-9d98-c146b002cfd4"))) // 1. Operational
                 as Select;
+
             decimal result = select.ExecuteScalar<decimal>();
             return result;
         }
+
         [OperationContract]
         [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped,
             RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
