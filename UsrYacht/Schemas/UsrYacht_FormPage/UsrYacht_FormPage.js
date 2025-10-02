@@ -336,6 +336,29 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_
 			},
 			{
 				"operation": "insert",
+				"name": "isOverMinPrice",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"colSpan": 1,
+						"row": 6,
+						"rowSpan": 1
+					},
+					"type": "crt.Checkbox",
+					"label": "$Resources.Strings.PageParameters_UsrBooleanParameter1_el19uxy",
+					"labelPosition": "auto",
+					"control": "$PageParameters_UsrBooleanParameter1_el19uxy",
+					"visible": false,
+					"readonly": false,
+					"placeholder": "",
+					"tooltip": ""
+				},
+				"parentName": "SideAreaProfileContainer",
+				"propertyName": "items",
+				"index": 5
+			},
+			{
+				"operation": "insert",
 				"name": "ComboBox_mak2txq",
 				"values": {
 					"layoutConfig": {
@@ -1074,7 +1097,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_
 							"MyMinValValidator": {
 								"type": "usr.YTValidator",
 								"params": {
-									"minValue": 50,
+									"minValue": 100,
 									"message": "#ResourceString(PriceCannotBeLess)#"
 								}
 							}
@@ -1098,7 +1121,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_
 							"MyMinValValidator": {
 								"type": "usr.YTValidator",
 								"params": {
-									"minValue": 3,
+									"minValue": 4,
 									"message": "#ResourceString(MinimumLength)#"
 								}
 							}
@@ -1212,6 +1235,11 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_
 								}
 							}
 						}
+					},
+					"PageParameters_UsrBooleanParameter1_el19uxy": {
+						"modelConfig": {
+							"path": "PageParameters.UsrisOverMinPrice"
+						}
 					}
 				}
 			},
@@ -1288,6 +1316,40 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_
 		]/**SCHEMA_MODEL_CONFIG_DIFF*/,
 		handlers: /**SCHEMA_HANDLERS*/[
 			{
+				request: "crt.HandleViewModelInitRequest",
+				handler: async (request, next) => {
+					await new Promise((resolve) => {
+						Terrasoft.SysSettings.querySysSettingsItem(
+							"MinPriceToRequireYachtComment",
+							(value) => {
+								const numericValue = Number(value);
+								request.$context.MinPriceToRequireYachtComment = Number.isFinite(numericValue) ? numericValue : 0;
+								resolve();
+							},
+							this
+						);
+					});
+
+					const price = Number(request.$context.PDS_UsrPrice_r4pn2q5) || 0;
+					const limit = Number(request.$context.MinPriceToRequireYachtComment) || 0;
+					request.$context.PageParameters_UsrBooleanParameter1_el19uxy = price > limit;
+
+					return next?.handle(request);
+				}
+			},
+			{
+				request: "crt.HandleViewModelAttributeChangeRequest",
+				handler: async (request, next) => {
+					if (request.attributeName === "PDS_UsrPrice_r4pn2q5") {
+						const price = Number(await request.$context.PDS_UsrPrice_r4pn2q5) || 0;
+						const limit = Number(request.$context.MinPriceToRequireYachtComment) || 0;
+						request.$context.PageParameters_UsrBooleanParameter1_el19uxy = price > limit;
+					}
+
+					return next?.handle(request);
+				}
+			},
+			{
 				request: "usr.PushButtonRequest",
 				/* Implementation of the custom query handler. */
 				handler: async (request, next) => {
@@ -1318,17 +1380,17 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_
 					const baseUrl = Terrasoft.utils.uri.getConfigurationWebServiceBaseUrl();
 					const transferName = "rest";
 					const serviceName = "YachtService";
-					const methodName = "GetMaxPriceByDriveTypeId";
+					const methodName = "GetAveragePriceByDriveTypeId";
 					const endpoint = Terrasoft.combinePath(baseUrl, transferName, serviceName, methodName);
 					
-					//const endpoint = "http://localhost/Y1DEV/0/rest/YachtService/GetMaxPriceByDriveTypeId";
+					//const endpoint = "http://localhost/Y1DEV/0/rest/YachtService/GetAveragePriceByDriveTypeId";
 					/* Send a POST HTTP request. The HTTP client converts the response body from JSON to a JS object automatically. */
 					var params = {
 						driveTypeId: driveTypeId
 					};
 					const response = await httpClientService.post(endpoint, params);
 					
-					console.log("response max price = " + response.body.GetMaxPriceByDriveTypeIdResult);
+					console.log("response max price = " + response.body.GetAveragePriceByDriveTypeIdResult);
 					
 					/* Call the next handler if it exists and return its result. */
 					return next?.handle(request);
